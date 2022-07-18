@@ -112,7 +112,7 @@ xPlayer.addEventListener('keypress', (e)=>{
     xPlayer.classList.add('invisible')
     xPlayerH1.classList.remove("invisible")
     xPlayerH1.innerHTML=`${xPlayer.value} is playing X`
-    // const playerX=player(`${xPlayer.value}`,"X")
+    playerX=player(`${xPlayer.value}`,"X")
     // const Edgar=player("Edgar","X")
   }
 })
@@ -121,7 +121,7 @@ oPlayer.addEventListener('keypress', (e)=>{
     oPlayer.classList.add('invisible')
     oPlayerH1.classList.remove("invisible")
     oPlayerH1.innerHTML=`${oPlayer.value} is playing O`
-    // const playerO=player(`${oPlayer.value}`,"O")
+    playerO=player(`${oPlayer.value}`,"O")
   }
 })
 
