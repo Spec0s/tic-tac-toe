@@ -72,6 +72,13 @@ var game = (() => {
     reset, checkGame, handleIncrement, gameStart, count
   }
 })();
+//---------------------------------------Player selection---------------------------------------//
+const player=(player, tag) => {
+  const getName=()=>player;
+  const getTag=()=>tag;
+  return {getName,getTag}
+};
+
 //---------------------------------------on click function---------------------------------------//
 var boardSquare = document.querySelectorAll(".board-div>div")
 boardSquare.forEach(square => {
@@ -95,10 +102,28 @@ boardSquare.forEach(square => {
 
 
 
-//   var player((player, tag) => {
-//     return {player, tag}
+const xPlayer=document.getElementById('player-x')
+const oPlayer=document.getElementById('player-o')
+const xPlayerH1=document.querySelector('.player-x-h1')
+const oPlayerH1=document.querySelector('.player-o-h1')
 
-//   })();
+xPlayer.addEventListener('keypress', (e)=>{
+  if(e.code=="Enter"){
+    xPlayer.classList.add('invisible')
+    xPlayerH1.classList.remove("invisible")
+    xPlayerH1.innerHTML=`${xPlayer.value} is playing X`
+    // const playerX=player(`${xPlayer.value}`,"X")
+    // const Edgar=player("Edgar","X")
+  }
+})
+oPlayer.addEventListener('keypress', (e)=>{
+  if(e.code=="Enter"){
+    oPlayer.classList.add('invisible')
+    oPlayerH1.classList.remove("invisible")
+    oPlayerH1.innerHTML=`${oPlayer.value} is playing O`
+    // const playerO=player(`${oPlayer.value}`,"O")
+  }
+})
 
 
 
