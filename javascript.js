@@ -12,6 +12,12 @@ var game = (() => {
     for (let i = 0; i < boardSquare.length; i++) {
       boardSquare[i].innerHTML = ""
     }
+    xPlayer.classList.remove('invisible')
+    xPlayerH1.classList.add("invisible")
+    oPlayer.classList.remove('invisible')
+    oPlayerH1.classList.add("invisible")
+    xPlayer.value=""
+    oPlayer.value=""
     console.log("Reset done!")
   }
   var btnToStart = document.querySelector(".btn-start-restart")
