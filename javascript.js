@@ -51,7 +51,8 @@ var game = (() => {
       ||
       (boardSquare[2].innerHTML === mark && boardSquare[4].innerHTML === mark && boardSquare[6].innerHTML === mark)) {
       display.innerHTML = `${mark} player won!`
-      game.reset()
+      game.start=false
+      // game.reset()
     }
     // else if (game.count == 0) {
     //   display.innerHTML = "Game start"
@@ -84,7 +85,7 @@ var boardSquare = document.querySelectorAll(".board-div>div")
 boardSquare.forEach(square => {
   square.addEventListener("click", function (e) {
     var square = e.target;
-    if (square.innerHTML != "") {
+    if (square.innerHTML != "" || game.start==false) {
       return
     } else if (game.start == true) {
       game.handleIncrement(false)
@@ -94,7 +95,8 @@ boardSquare.forEach(square => {
       console.log(game.count)
       if (game.count === 8) {
         console.log("It's a tie!")
-        game.reset()
+        game.start=false
+        // game.reset()
       }
     }
   })
